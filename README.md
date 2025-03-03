@@ -177,6 +177,8 @@ A similar issue also occurs with stacks: https://github.com/expo/expo/issues/351
 #### Gif 3  
 **Unexpected Visual and Functional navigation effects**
 
+From `expo/apps/router-e2e/__e2e__/headless`
+
 ![tab-behavior-with-stacks-no-initial-click-on-tab](https://github.com/user-attachments/assets/801a1240-b524-42d8-ba3f-38421541286e)
 
 No initial click on Tab Button
@@ -187,6 +189,8 @@ With initial click on Tab Button
 
 #### Gif 4 
 **With reset="never"**
+
+From `expo/apps/router-e2e/__e2e__/headless`
 
 ![tab-behavior-with-stacks-with-reset-never](https://github.com/user-attachments/assets/b9196d42-ee1c-40fb-81f3-696d4449b2d6)
 
