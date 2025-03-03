@@ -154,6 +154,7 @@ Giving `reset="never"` to `TabTrigger` improves the results ([See Gif 4](#gif-4)
 
 When switching tabs, the screen flickers briefly because the rendered screen does not initially take up 100% of the height. This is highly noticeable as content gets misplaced momentarily. This issue does not happen for every tab change, but often enough for it to become annoying. [See Gif 5](#gif-5)
 
+This occurs for Stacks with headers, where styling and nesting seem to be different when creating custom tabs than from when using default tabs with Expo Router/React Navigation.
 
 Related issue:
 https://github.com/expo/expo/issues/35116
