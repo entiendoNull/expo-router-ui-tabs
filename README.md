@@ -18,6 +18,7 @@
   - [Gif 2](#gif-2)
   - [Gif 3](#gif-3)
   - [Gif 4](#gif-4)
+  - [Gif 5](#gif-5)
 
 ## Docs
 
@@ -116,32 +117,69 @@ There are inconsistencies in how screens stabilize (stop re-rendering) when usin
 
 #### With Stacks
 
-The initial stack screen renders twice before stabilizing. (see gif 1)
-
-Navigation with custom tabs and stacks results in weird visual and functional behaviors (see gif 2)
-
-- Adding `reset="never"` improves the results
+The initial stack screen renders twice before stabilizing. [See Gif 1](#gif-1)
 
 #### Without Stacks
 
-The screen never stabilizes, leading to continuous re-renders. (see gif 3)
+The screen never stabilizes, leading to continuous re-renders. [See Gif 2](#gif-2)
+
 
 Related issue:
 https://github.com/expo/expo/issues/35117
 
+
+### Unexpected Visual and Functional navigation effects
+Navigation with custom tabs and stacks results in weird visual and functional behaviors ([See Gif 3](#gif-3)), e.g.
+- Clicking on TabTrigger may render a Stack Screenw without a header
+- Navigate back and forth in the stack
+
+Giving `reset="never"` to `TabTrigger` improves the results ([See Gif 4](#gif-4))
+
 ### Screen Flickering
 
-When switching tabs, the screen flickers briefly because the rendered screen does not initially take up 100% of the height. This is highly noticeable as content gets misplaced momentarily. This issue does not happen for every tab change, but often enough for it to become annoying. (see gif 4)
+When switching tabs, the screen flickers briefly because the rendered screen does not initially take up 100% of the height. This is highly noticeable as content gets misplaced momentarily. This issue does not happen for every tab change, but often enough for it to become annoying. [See Gif 5](#gif-5)
+
 
 Related issue:
 https://github.com/expo/expo/issues/35116
 
 ## Resources
 
-#### Gif 1
+#### Gif 1 
+**Re-render**
 
-#### Gif 2
+![Image](https://github.com/user-attachments/assets/a4e634e8-526e-46bf-8326-8d18633e20b2)
 
-#### Gif 3
+#### Gif 2 
+**Re-render**
 
-#### Gif 4
+![re-render-comparison](https://github.com/user-attachments/assets/f425fbe2-d007-4221-b456-0671226f03b4)
+
+Comparison default tabs and custom tabs screen behavior. Notice how the timestamp does not change on the left (default tabs) but changes for every click on the right (custom tabs).
+A similar issue also occurs with stacks: https://github.com/expo/expo/issues/35117
+
+#### Gif 3  
+**Unexpected Visual and Functional navigation effects**
+
+![tab-behavior-with-stacks-no-initial-click-on-tab](https://github.com/user-attachments/assets/801a1240-b524-42d8-ba3f-38421541286e)
+
+No initial click on Tab Button
+
+![tab-behavior-with-stacks-with-initial-click-on-tab](https://github.com/user-attachments/assets/f6f5371f-7992-4da4-88cd-d014103ae64c)
+
+With initial click on Tab Button
+
+#### Gif 4 
+**With reset="never"**
+
+![tab-behavior-with-stacks-with-reset-never](https://github.com/user-attachments/assets/b9196d42-ee1c-40fb-81f3-696d4449b2d6)
+
+With explicitly giving prop `reset="never"` to TabTriggers
+
+#### Gif 5 
+**Stack Screen flickering/blinking**
+
+![Image](https://github.com/user-attachments/assets/454b9052-9b03-4118-b89d-e90811d44011)
+
+![Image](https://github.com/user-attachments/assets/2c08c56a-b852-4bc0-99eb-fc70b5cd712d)
+
