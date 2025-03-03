@@ -78,7 +78,7 @@ For example...
 </Link>
 ```
 
-✅ This works for TabList
+✅ This works for `TabList`
 ```
 <Tabs>
   <TabSlot />
