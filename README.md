@@ -78,17 +78,32 @@ For example...
 </Link>
 ```
 
-✅ This works
+✅ This works for TabList
+```
+<Tabs>
+  <TabSlot />
+  <TabList>
+    <TabTrigger name="foo" href="/">
+      <Text>
+        Foo
+      </Text>
+    </TabTrigger>
+  </TabList>
+</Tabs>
+```
 
+✅ And also this
 ```
 <Tabs>
   <TabSlot />
   <TabList asChild>
-  	<MyCustomTabListLayout>
-  		<TabTrigger name="foo" href="/">
-  			Foo
-  		</TabTrigger>
-  	</MyCustomTabListLayout>
+    <MyCustomTabListLayout>
+      <TabTrigger name="foo" href="/">
+        <Text>
+         Foo
+        </Text>
+      </TabTrigger>
+    </MyCustomTabListLayout>
   </TabList>
 </Tabs>
 ```
